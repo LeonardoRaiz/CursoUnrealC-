@@ -1,7 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Léo
 
 
-#include "MinhaPrimeiraClasse_ACTOR.h"
+#include "../Private/MinhaPrimeiraClasse_ACTOR.h"
 
 // Sets default values
 AMinhaPrimeiraClasse_ACTOR::AMinhaPrimeiraClasse_ACTOR()
@@ -22,6 +22,11 @@ void AMinhaPrimeiraClasse_ACTOR::BeginPlay()
 void AMinhaPrimeiraClasse_ACTOR::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	//mantem o valor a cada interação
+	static int32 x = 0;
+	//GLog->Log("X = " + FString::FromInt(x));
+	//Log Warning da propria Unreal
+	UE_LOG(LogTemp, Warning, TEXT("X = %d DeltaTime = %f"), x, DeltaTime);
+	x++;
 }
 
